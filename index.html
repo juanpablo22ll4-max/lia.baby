@@ -1,277 +1,542 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Baby Shower de Lía Isabel 🧸</title>
+    <title>Baby Shower | Lía Isabel</title>
 
+    <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500&display=swap"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- PANTALLA DE BIENVENIDA -->
 
-    <div class="welcome-screen" id="welcomeScreen">
+<!-- ==================================================
+     PANTALLA DE ENTRADA
+================================================== -->
 
-        <div class="welcome-content">
+<div class="welcome-screen" id="welcomeScreen">
 
-            <div class="welcome-bear">🧸</div>
+    <div class="welcome-flower welcome-flower-1">🌸</div>
+    <div class="welcome-flower welcome-flower-2">🌷</div>
 
-            <p>Una dulce celebración</p>
+    <div class="welcome-butterfly butterfly-welcome-1">🦋</div>
+    <div class="welcome-butterfly butterfly-welcome-2">🦋</div>
 
-            <h1>Lía Isabel</h1>
+    <div class="welcome-card">
 
-            <span>Una pequeña princesa viene en camino</span>
+        <div class="bow">🎀</div>
 
-            <button id="openInvitation">
-                Abrir invitación 💌
-            </button>
+        <p class="mini-title">
+            UNA DULCE CELEBRACIÓN
+        </p>
 
+        <p class="welcome-baby">
+            Baby Shower
+        </p>
+
+        <span class="in-honor">
+            En honor a nuestra bebé
+        </span>
+
+        <h1>Lía Isabel</h1>
+
+        <div class="heart-line">
+            ───── ♡ ─────
         </div>
+
+        <p class="welcome-message">
+            Con mucha alegría queremos compartir
+            contigo este momento tan especial
+            antes de su llegada.
+        </p>
+
+        <button id="openInvitation">
+            Abrir invitación ♡
+        </button>
 
     </div>
 
+</div>
 
-    <!-- INVITACIÓN PRINCIPAL -->
 
-    <main id="invitation" class="hidden">
 
-        <!-- PORTADA -->
+<!-- ==================================================
+     INVITACIÓN
+================================================== -->
 
-        <section class="hero">
+<main id="invitation" class="hidden">
 
-            <div class="floating-flower flower1">🌸</div>
-            <div class="floating-flower flower2">🌷</div>
-            <div class="floating-flower flower3">🌸</div>
 
-            <div class="hero-content">
+    <!-- ==================================================
+         PORTADA
+    ================================================== -->
 
-                <p class="small-title">
-                    TE INVITAMOS A CELEBRAR
-                </p>
+    <section class="hero">
 
-                <div class="bear-decoration">
-                    🧸
+
+        <!-- FLORES DE LAS ESQUINAS -->
+
+        <div class="corner-flower top-left">
+            🌸
+        </div>
+
+        <div class="corner-flower bottom-right">
+            🌸
+        </div>
+
+
+        <!-- MARIPOSAS -->
+
+        <div class="floating-butterfly butterfly-1">
+            🦋
+        </div>
+
+        <div class="floating-butterfly butterfly-2">
+            🦋
+        </div>
+
+        <div class="floating-butterfly butterfly-3">
+            🦋
+        </div>
+
+
+
+        <!-- ==================================================
+             TARJETA PRINCIPAL
+        ================================================== -->
+
+        <div class="invitation-frame">
+
+
+            <!-- LAZO -->
+
+            <div class="big-bow">
+                🎀
+            </div>
+
+
+            <p class="mini-title">
+                TE INVITAMOS A CELEBRAR
+            </p>
+
+
+            <h2>
+                Baby Shower
+            </h2>
+
+
+            <div class="tiny-heart">
+                ♡
+            </div>
+
+
+            <p class="in-honor">
+                EN HONOR A NUESTRA BEBÉ
+            </p>
+
+
+            <h1>
+                Lía Isabel
+            </h1>
+
+
+            <div class="decorative-line">
+                <span></span>
+                <b>♡</b>
+                <span></span>
+            </div>
+
+
+            <p class="hero-message">
+
+                Con mucha alegría queremos
+                compartir contigo este momento
+                tan especial antes de su llegada.
+
+            </p>
+
+
+
+            <!-- ==================================================
+                 CONEJITA
+            ================================================== -->
+
+            <div class="bunny-area">
+
+
+                <!-- HALO ROSADO DETRÁS -->
+
+                <div class="bunny-glow"></div>
+
+
+                <!-- FLORES DETRÁS -->
+
+                <div class="bunny-decoration bunny-decoration-left">
+                    🌸
                 </div>
 
-                <h2>Baby Shower</h2>
-
-                <p class="of-text">de nuestra princesa</p>
-
-                <h1>Lía Isabel</h1>
-
-                <div class="divider">
-                    ✿ ─── ♡ ─── ✿
+                <div class="bunny-decoration bunny-decoration-right">
+                    🌸
                 </div>
 
-                <p class="hero-message">
-                    Una dulce bendición está por llegar
-                    a nuestras vidas.
-                </p>
 
-                <p class="scroll-text">
-                    Desliza para descubrir nuestra invitación ↓
-                </p>
+                <!-- IMAGEN DE LA CONEJITA -->
+
+                <img
+                    src="/img/Conejita Bailarina con Lazo Rosa.png"
+                    alt="Conejita del Baby Shower de Lía Isabel"
+                    class="bunny-image"
+                >
+
+
+                <!-- MARIPOSA PEQUEÑA -->
+
+                <div class="bunny-butterfly">
+                    🦋
+                </div>
+
 
             </div>
 
-        </section>
 
 
-        <!-- MENSAJE -->
+            <!-- ==================================================
+                 DESLIZAR
+            ================================================== -->
 
-        <section class="message-section reveal">
+            <div class="scroll-message">
 
-            <div class="section-card">
+                <span>
+                    Descubre nuestra invitación
+                </span>
 
-                <div class="section-icon">🌷</div>
-
-                <h2>Un sueño hecho realidad</h2>
-
-                <p>
-                    Hay pequeños milagros que llegan
-                    para llenar nuestros corazones
-                    de amor y felicidad.
-                </p>
-
-                <p>
-                    Muy pronto conoceremos a nuestra
-                    pequeña Lía Isabel.
-                </p>
-
-                <p>
-                    Queremos compartir contigo
-                    la alegría de su llegada.
-                </p>
-
-                <h3>
-                    ¡Acompáñanos a celebrar!
-                </h3>
+                <div class="scroll-arrow">
+                    ↓
+                </div>
 
             </div>
 
-        </section>
+
+        </div>
 
 
-        <!-- FECHA DEL EVENTO -->
+    </section>
 
-        <section class="date-section reveal">
 
-            <p class="section-subtitle">
+
+    <!-- ==================================================
+         MENSAJE
+    ================================================== -->
+
+    <section class="story-section reveal">
+
+        <div class="watercolor-flower flower-left">
+            🌸
+        </div>
+
+        <div class="watercolor-flower flower-right">
+            🌷
+        </div>
+
+        <div class="section-content">
+
+            <span class="section-symbol">
+                ♡
+            </span>
+
+            <p class="mini-title">
+                NUESTRA PEQUEÑA PRINCESA
+            </p>
+
+            <h2>
+                Un sueño hecho realidad
+            </h2>
+
+            <div class="small-line"></div>
+
+            <p>
+                Hay pequeños milagros que llegan
+                para cambiar nuestras vidas para siempre.
+            </p>
+
+            <p>
+                Muy pronto tendremos entre nuestros
+                brazos a nuestra pequeña
+                <strong>Lía Isabel</strong>.
+            </p>
+
+            <p>
+                Queremos compartir contigo la alegría,
+                el amor y la ilusión de su dulce espera.
+            </p>
+
+            <h3>
+                ¡Acompáñanos a celebrar!
+            </h3>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         FECHA
+    ================================================== -->
+
+    <section class="date-section reveal">
+
+        <div class="date-frame">
+
+            <div class="floating-butterfly date-butterfly">
+                🦋
+            </div>
+
+            <p class="mini-title">
                 RESERVA ESTA FECHA
             </p>
 
-            <h2>Un día muy especial</h2>
+            <h2>
+                Un día muy especial
+            </h2>
 
-            <div class="date-card">
+            <div class="date-content">
 
-                <div class="month">
+                <span class="month">
                     ENERO
-                </div>
+                </span>
 
-                <div class="date-number">
+                <div class="day-number">
                     09
                 </div>
 
-                <div class="year">
-                    SÁBADO • 2027
-                </div>
+                <span class="day-name">
+                    SÁBADO
+                </span>
 
-                <div class="date-line"></div>
+                <div class="date-divider"></div>
 
-                <div class="event-time">
-                    🕓 4:00 PM
-                </div>
+                <span class="year">
+                    2027
+                </span>
+
+                <span class="event-time">
+                    4:00 p.m.
+                </span>
 
             </div>
 
-        </section>
-
-
-        <!-- CUENTA REGRESIVA -->
-
-        <section class="countdown-section reveal">
-
-            <p class="section-subtitle">
-                FALTA MUY POQUITO
+            <p class="date-message">
+                Esperamos compartir este hermoso
+                momento junto a ti.
             </p>
 
-            <h2>Cuenta regresiva</h2>
+        </div>
 
-            <div class="countdown">
+    </section>
 
-                <div class="time-box">
+
+
+    <!-- ==================================================
+         CUENTA REGRESIVA
+    ================================================== -->
+
+    <section class="countdown-section reveal">
+
+        <div class="section-content">
+
+            <p class="mini-title">
+                CADA DÍA FALTA MENOS
+            </p>
+
+            <h2>
+                Esperando a Lía
+            </h2>
+
+            <div class="small-line"></div>
+
+            <p class="countdown-text">
+                Contamos los días para celebrar
+                la llegada de nuestra princesa.
+            </p>
+
+
+            <div class="countdown" id="countdown">
+
+                <div class="time-card">
                     <span id="days">00</span>
-                    <small>Días</small>
+                    <small>DÍAS</small>
                 </div>
 
-                <div class="time-box">
+                <div class="time-card">
                     <span id="hours">00</span>
-                    <small>Horas</small>
+                    <small>HORAS</small>
                 </div>
 
-                <div class="time-box">
+                <div class="time-card">
                     <span id="minutes">00</span>
-                    <small>Minutos</small>
+                    <small>MIN</small>
                 </div>
 
-                <div class="time-box">
+                <div class="time-card">
                     <span id="seconds">00</span>
-                    <small>Segundos</small>
+                    <small>SEG</small>
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- UBICACIÓN -->
 
-        <section class="location-section reveal">
+    <!-- ==================================================
+         UBICACIÓN
+    ================================================== -->
 
-            <div class="section-icon">📍</div>
+    <section class="location-section reveal">
 
-            <h2>¿Dónde celebraremos?</h2>
+        <div class="floating-butterfly location-butterfly">
+            🦋
+        </div>
 
-            <p>
-                Nos encantará compartir
-                este momento contigo.
+        <div class="section-content">
+
+            <div class="location-icon">
+                ♡
+            </div>
+
+            <p class="mini-title">
+                TE ESPERAMOS
             </p>
+
+            <h2>
+                Lugar de celebración
+            </h2>
+
+            <div class="small-line"></div>
+
 
             <div class="location-card">
 
-                <h3>Baby Shower de Lía Isabel</h3>
+                <p class="location-name">
+                    Baby Shower de
+                </p>
+
+                <h3>
+                    Lía Isabel
+                </h3>
 
                 <p id="eventAddress">
                     Dirección próximamente
                 </p>
 
-                <button class="btn-primary" id="locationButton">
+                <button
+                    id="locationButton"
+                    class="invitation-button"
+                >
                     Ver ubicación
                 </button>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- REGALOS -->
 
-        <section class="gifts-section reveal">
+    <!-- ==================================================
+         REGALOS
+    ================================================== -->
 
-            <div class="gift-decoration">
-                🎁
+    <section class="gift-section reveal">
+
+        <div class="section-content">
+
+            <div class="gift-bow">
+                🎀
             </div>
 
-            <h2>Una lluvia de amor</h2>
+            <p class="mini-title">
+                CON MUCHO CARIÑO
+            </p>
+
+            <h2>
+                Lluvia de amor
+            </h2>
+
+            <div class="small-line"></div>
 
             <p>
-                Tu presencia es nuestro regalo
-                más especial.
+                Tu presencia es el regalo
+                más importante para nosotros.
             </p>
 
             <p>
-                Pero si deseas tener un detalle
-                con nuestra pequeña Lía Isabel,
-                hemos preparado una lista de regalos.
+                Si deseas tener un detalle con
+                nuestra pequeña Lía Isabel,
+                preparamos una lista de regalos
+                pensando en su llegada.
             </p>
 
-            <a href="#"
-               id="amazonButton"
-               class="btn-gift">
-
-                🎁 Ver lista de regalos en Amazon
-
+            <a
+                href="#"
+                id="amazonButton"
+                class="invitation-button"
+            >
+                Ver lista de regalos
             </a>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- CONFIRMACIÓN -->
 
-        <section class="rsvp-section reveal">
+    <!-- ==================================================
+         CONFIRMAR ASISTENCIA
+    ================================================== -->
 
-            <div class="section-icon">💌</div>
+    <section class="rsvp-section reveal">
 
-            <h2>Confirma tu asistencia</h2>
+        <div class="section-content">
 
-            <p>
-                Nos haría mucha ilusión
-                contar con tu presencia
-                en este día tan especial.
+            <div class="floating-butterfly rsvp-butterfly">
+                🦋
+            </div>
+
+            <p class="mini-title">
+                QUEREMOS CELEBRAR CONTIGO
             </p>
 
-            <div class="rsvp-card">
+            <h2>
+                Confirma tu asistencia
+            </h2>
+
+            <div class="small-line"></div>
+
+            <p>
+                Será un día aún más especial
+                si podemos compartirlo contigo.
+            </p>
+
+
+            <div class="rsvp-form">
 
                 <label for="guestName">
-                    Tu nombre
+                    Nombre
                 </label>
 
                 <input
@@ -280,59 +545,105 @@
                     placeholder="Escribe tu nombre"
                 >
 
+
                 <label for="guestCount">
-                    Número de personas
+                    Personas que asistirán
                 </label>
 
                 <select id="guestCount">
-                    <option value="1">1 persona</option>
-                    <option value="2">2 personas</option>
-                    <option value="3">3 personas</option>
-                    <option value="4">4 personas</option>
-                    <option value="5">5 personas</option>
+
+                    <option value="1">
+                        1 persona
+                    </option>
+
+                    <option value="2">
+                        2 personas
+                    </option>
+
+                    <option value="3">
+                        3 personas
+                    </option>
+
+                    <option value="4">
+                        4 personas
+                    </option>
+
+                    <option value="5">
+                        5 personas
+                    </option>
+
                 </select>
 
-                <button id="confirmButton" class="btn-primary">
-                    Confirmar por WhatsApp
+
+                <button
+                    id="confirmButton"
+                    class="invitation-button"
+                >
+                    Confirmar asistencia
                 </button>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- DESPEDIDA -->
 
-        <footer>
+    <!-- ==================================================
+         FINAL
+    ================================================== -->
 
-            <div class="footer-bear">
-                🧸
+    <footer>
+
+        <div class="footer-flower">
+            🌸
+        </div>
+
+        <div class="footer-bunny">
+
+            <div class="bunny-placeholder small-bunny">
+                🐰
+
+                <span class="bunny-bow">
+                    🎀
+                </span>
             </div>
 
-            <h2>Te esperamos</h2>
+        </div>
 
-            <p>
-                Con mucho amor,
-                esperamos compartir contigo
-                la dulce espera de
-                nuestra princesa.
-            </p>
+        <p class="mini-title">
+            CON TODO NUESTRO AMOR
+        </p>
 
-            <h1>Lía Isabel</h1>
+        <h2>
+            Gracias por acompañarnos
+        </h2>
 
-            <div class="footer-divider">
-                ♡ 🌸 ♡
-            </div>
+        <p>
+            Nos llena de alegría poder compartir
+            contigo la dulce espera de nuestra bebé.
+        </p>
 
-            <small>
-                Hecho con amor para nuestra pequeña Lía.
-            </small>
+        <h1>
+            Lía Isabel
+        </h1>
 
-        </footer>
+        <div class="decorative-line">
+            ───── ♡ ─────
+        </div>
 
-    </main>
+        <p class="footer-date">
+            09 • 01 • 2027
+        </p>
 
-    <script src="script.js"></script>
+    </footer>
+
+
+</main>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
