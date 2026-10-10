@@ -7,29 +7,15 @@
 // CONFIGURACIÓN
 // ==================================================
 
-const eventDate =
-    new Date(
-        "2027-01-09T16:00:00-06:00"
-    );
-
-
-// DIRECCIÓN
-
-const eventAddress =
-    "Dirección próximamente";
-
-
-// LINK DE AMAZON
-
-const amazonLink =
-    "";
+const eventDate = new Date(
+    "2027-01-09T16:00:00-06:00"
+);
 
 
 // WHATSAPP
 // Ejemplo: 16301234567
 
-const whatsappNumber =
-    "";
+const whatsappNumber = "18156931464";
 
 
 
@@ -38,68 +24,58 @@ const whatsappNumber =
 // ==================================================
 
 const welcomeScreen =
-    document.getElementById(
-        "welcomeScreen"
-    );
-
+    document.getElementById("welcomeScreen");
 
 const invitation =
-    document.getElementById(
-        "invitation"
-    );
-
+    document.getElementById("invitation");
 
 const openButton =
-    document.getElementById(
-        "openInvitation"
+    document.getElementById("openInvitation");
+
+
+if (openButton) {
+
+    openButton.addEventListener(
+        "click",
+        function () {
+
+            welcomeScreen.style.transition =
+                "opacity 0.9s ease, transform 0.9s ease";
+
+            welcomeScreen.style.opacity =
+                "0";
+
+            welcomeScreen.style.transform =
+                "scale(1.05)";
+
+
+            setTimeout(
+                function () {
+
+                    welcomeScreen.style.display =
+                        "none";
+
+                    invitation.classList.remove(
+                        "hidden"
+                    );
+
+                    window.scrollTo(
+                        0,
+                        0
+                    );
+
+                    startScrollAnimations();
+
+                    startPetals();
+
+                },
+                900
+            );
+
+        }
     );
 
-
-openButton.addEventListener(
-    "click",
-    function () {
-
-        welcomeScreen.style.transition =
-            "opacity 0.9s ease, transform 0.9s ease";
-
-
-        welcomeScreen.style.opacity =
-            "0";
-
-
-        welcomeScreen.style.transform =
-            "scale(1.05)";
-
-
-        setTimeout(
-            function () {
-
-                welcomeScreen.style.display =
-                    "none";
-
-
-                invitation.classList.remove(
-                    "hidden"
-                );
-
-
-                window.scrollTo(
-                    0,
-                    0
-                );
-
-
-                startScrollAnimations();
-
-
-                startPetals();
-
-            },
-            900
-        );
-
-    }
-);
+}
 
 
 
@@ -112,34 +88,35 @@ function updateCountdown() {
     const now =
         new Date().getTime();
 
-
     const distance =
-        eventDate.getTime() -
-        now;
+        eventDate.getTime() - now;
 
 
-    if (
-        distance <= 0
-    ) {
+    if (distance <= 0) {
 
-        document.getElementById(
-            "countdown"
-        ).innerHTML = `
+        const countdown =
+            document.getElementById("countdown");
 
-            <div class="event-today">
+        if (countdown) {
 
-                <h3>
-                    ¡Llegó el gran día! ♡
-                </h3>
+            countdown.innerHTML = `
 
-                <p>
-                    Hoy celebramos la dulce
-                    espera de Lía Isabel.
-                </p>
+                <div class="event-today">
 
-            </div>
+                    <h3>
+                        ¡Llegó el gran día! ♡
+                    </h3>
 
-        `;
+                    <p>
+                        Hoy celebramos la dulce
+                        espera de Lía Isabel.
+                    </p>
+
+                </div>
+
+            `;
+
+        }
 
         return;
     }
@@ -147,130 +124,84 @@ function updateCountdown() {
 
     const days =
         Math.floor(
-
             distance /
-
-            (
-                1000 *
-                60 *
-                60 *
-                24
-            )
-
+            (1000 * 60 * 60 * 24)
         );
 
 
     const hours =
         Math.floor(
-
             (
                 distance %
-
-                (
-                    1000 *
-                    60 *
-                    60 *
-                    24
-                )
+                (1000 * 60 * 60 * 24)
             )
-
             /
-
-            (
-                1000 *
-                60 *
-                60
-            )
-
+            (1000 * 60 * 60)
         );
 
 
     const minutes =
         Math.floor(
-
             (
                 distance %
-
-                (
-                    1000 *
-                    60 *
-                    60
-                )
+                (1000 * 60 * 60)
             )
-
             /
-
-            (
-                1000 *
-                60
-            )
-
+            (1000 * 60)
         );
 
 
     const seconds =
         Math.floor(
-
             (
                 distance %
-
-                (
-                    1000 *
-                    60
-                )
+                (1000 * 60)
             )
-
             /
-
             1000
-
         );
 
 
-    document.getElementById(
-        "days"
-    ).textContent =
-        String(days)
-        .padStart(
-            2,
-            "0"
-        );
+    const daysElement =
+        document.getElementById("days");
+
+    const hoursElement =
+        document.getElementById("hours");
+
+    const minutesElement =
+        document.getElementById("minutes");
+
+    const secondsElement =
+        document.getElementById("seconds");
 
 
-    document.getElementById(
-        "hours"
-    ).textContent =
-        String(hours)
-        .padStart(
-            2,
-            "0"
-        );
+    if (daysElement) {
+        daysElement.textContent =
+            String(days).padStart(2, "0");
+    }
 
 
-    document.getElementById(
-        "minutes"
-    ).textContent =
-        String(minutes)
-        .padStart(
-            2,
-            "0"
-        );
+    if (hoursElement) {
+        hoursElement.textContent =
+            String(hours).padStart(2, "0");
+    }
 
 
-    document.getElementById(
-        "seconds"
-    ).textContent =
-        String(seconds)
-        .padStart(
-            2,
-            "0"
-        );
+    if (minutesElement) {
+        minutesElement.textContent =
+            String(minutes).padStart(2, "0");
+    }
+
+
+    if (secondsElement) {
+        secondsElement.textContent =
+            String(seconds).padStart(2, "0");
+    }
 
 }
 
 
 updateCountdown();
-
 
 setInterval(
     updateCountdown,
@@ -286,34 +217,23 @@ setInterval(
 function startScrollAnimations() {
 
     const elements =
-        document.querySelectorAll(
-            ".reveal"
-        );
+        document.querySelectorAll(".reveal");
 
 
     const observer =
         new IntersectionObserver(
 
-            function (
-                entries
-            ) {
+            function (entries) {
 
                 entries.forEach(
 
-                    function (
-                        entry
-                    ) {
+                    function (entry) {
 
-                        if (
-                            entry.isIntersecting
-                        ) {
+                        if (entry.isIntersecting) {
 
                             entry.target
                                 .classList
-                                .add(
-                                    "active"
-                                );
-
+                                .add("active");
 
                             observer.unobserve(
                                 entry.target
@@ -328,10 +248,7 @@ function startScrollAnimations() {
             },
 
             {
-
-                threshold:
-                    0.15
-
+                threshold: 0.15
             }
 
         );
@@ -339,9 +256,7 @@ function startScrollAnimations() {
 
     elements.forEach(
 
-        function (
-            element
-        ) {
+        function (element) {
 
             observer.observe(
                 element
@@ -359,23 +274,17 @@ function startScrollAnimations() {
 // PÉTALOS
 // ==================================================
 
-let petalsStarted =
-    false;
+let petalsStarted = false;
 
 
 function startPetals() {
 
-    if (
-        petalsStarted
-    ) {
-
+    if (petalsStarted) {
         return;
-
     }
 
 
-    petalsStarted =
-        true;
+    petalsStarted = true;
 
 
     setInterval(
@@ -396,9 +305,7 @@ function startPetals() {
 function createPetal() {
 
     const petal =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
 
     petal.classList.add(
@@ -408,7 +315,9 @@ function createPetal() {
 
     const petals = [
         "🌸",
-        "🌷",
+        "✨",
+        "🌼",
+        "ꕤ",
         "♡"
     ];
 
@@ -481,9 +390,7 @@ document.addEventListener(
 
     "mousemove",
 
-    function (
-        event
-    ) {
+    function (event) {
 
         const butterflies =
             document.querySelectorAll(
@@ -552,106 +459,35 @@ document.addEventListener(
 
 
 // ==================================================
-// DIRECCIÓN
-// ==================================================
-
-document.getElementById(
-    "eventAddress"
-).textContent =
-    eventAddress;
-
-
-
-// ==================================================
 // GOOGLE MAPS
 // ==================================================
 
-document.getElementById(
-    "locationButton"
-)
-.addEventListener(
+const locationButton =
+    document.getElementById(
+        "locationButton"
+    );
 
-    "click",
 
-    function () {
+if (locationButton) {
 
-        if (
-            eventAddress ===
-            "Dirección próximamente"
-        ) {
+    locationButton.addEventListener(
+        "click",
+        function () {
 
-            alert(
-                "Próximamente compartiremos la ubicación ♡"
+            const mapsURL =
+                "https://maps.app.goo.gl/auW3b11qTrTf5n6H8";
+
+
+            window.open(
+                mapsURL,
+                "_blank",
+                "noopener,noreferrer"
             );
-
-            return;
 
         }
+    );
 
-
-        const mapsURL =
-
-            "https://www.google.com/maps/search/?api=1&query="
-
-            +
-
-            encodeURIComponent(
-                eventAddress
-            );
-
-
-        window.open(
-            mapsURL,
-            "_blank",
-            "noopener,noreferrer"
-        );
-
-    }
-
-);
-
-
-
-// ==================================================
-// AMAZON
-// ==================================================
-
-document.getElementById(
-    "amazonButton"
-)
-.addEventListener(
-
-    "click",
-
-    function (
-        event
-    ) {
-
-        event.preventDefault();
-
-
-        if (
-            !amazonLink
-        ) {
-
-            alert(
-                "Nuestra lista de regalos estará disponible próximamente 🎀"
-            );
-
-            return;
-
-        }
-
-
-        window.open(
-            amazonLink,
-            "_blank",
-            "noopener,noreferrer"
-        );
-
-    }
-
-);
+}
 
 
 
@@ -659,63 +495,60 @@ document.getElementById(
 // CONFIRMAR ASISTENCIA
 // ==================================================
 
-document.getElementById(
-    "confirmButton"
-)
-.addEventListener(
-
-    "click",
-
-    function () {
-
-        const guestName =
-
-            document
-            .getElementById(
-                "guestName"
-            )
-            .value
-            .trim();
+const confirmButton =
+    document.getElementById(
+        "confirmButton"
+    );
 
 
-        const guestCount =
+if (confirmButton) {
 
-            document
-            .getElementById(
-                "guestCount"
-            )
-            .value;
+    confirmButton.addEventListener(
 
+        "click",
 
-        if (
-            !guestName
-        ) {
+        function () {
 
-            alert(
-                "Por favor escribe tu nombre ♡"
-            );
-
-            return;
-
-        }
+            const guestName =
+                document
+                    .getElementById(
+                        "guestName"
+                    )
+                    .value
+                    .trim();
 
 
-        if (
-            !whatsappNumber
-        ) {
-
-            alert(
-                "El número para confirmar estará disponible próximamente."
-            );
-
-            return;
-
-        }
+            const guestCount =
+                document
+                    .getElementById(
+                        "guestCount"
+                    )
+                    .value;
 
 
-        const message =
+            if (!guestName) {
 
-`Hola ♡
+                alert(
+                    "Por favor escribe tu nombre ♡"
+                );
+
+                return;
+
+            }
+
+
+            if (!whatsappNumber) {
+
+                alert(
+                    "El número para confirmar estará disponible próximamente."
+                );
+
+                return;
+
+            }
+
+
+            const message = `Hola ♡
 
 Quiero confirmar mi asistencia al Baby Shower de Lía Isabel.
 
@@ -725,31 +558,26 @@ Personas que asistirán: ${guestCount}
 ¡Muchas gracias por la invitación! 🌸`;
 
 
-        const whatsappURL =
+            const whatsappURL =
+                "https://wa.me/"
+                +
+                whatsappNumber
+                +
+                "?text="
+                +
+                encodeURIComponent(
+                    message
+                );
 
-            "https://wa.me/"
 
-            +
-
-            whatsappNumber
-
-            +
-
-            "?text="
-
-            +
-
-            encodeURIComponent(
-                message
+            window.open(
+                whatsappURL,
+                "_blank",
+                "noopener,noreferrer"
             );
 
+        }
 
-        window.open(
-            whatsappURL,
-            "_blank",
-            "noopener,noreferrer"
-        );
+    );
 
-    }
-
-);
+}

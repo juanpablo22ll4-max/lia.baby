@@ -41,11 +41,9 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     min-height: 100vh;
@@ -97,7 +95,6 @@ body::after {
     background-size: 5px 5px;
 }
 
-
 .hidden {
     display: none;
 }
@@ -146,13 +143,11 @@ body::after {
     color: var(--texto-suave);
 }
 
-
 h1,
 h2,
 h3 {
     font-weight: 400;
 }
-
 
 section h2 {
     font-family:
@@ -170,7 +165,6 @@ section h2 {
 
     color: var(--rosa-oscuro);
 }
-
 
 section p {
     font-size: 15px;
@@ -212,7 +206,6 @@ section p {
     overflow: hidden;
 }
 
-
 .welcome-card {
     position: relative;
 
@@ -249,7 +242,6 @@ section p {
         1.4s ease;
 }
 
-
 .welcome-card::before {
     content: "";
 
@@ -270,7 +262,6 @@ section p {
     pointer-events: none;
 }
 
-
 .bow {
     margin-bottom: 10px;
 
@@ -281,7 +272,6 @@ section p {
         3s ease-in-out
         infinite;
 }
-
 
 .welcome-baby {
     margin:
@@ -302,7 +292,6 @@ section p {
     color: var(--rosa-oscuro);
 }
 
-
 .in-honor {
     display: block;
 
@@ -318,7 +307,6 @@ section p {
 
     text-transform: uppercase;
 }
-
 
 .welcome-card h1 {
     margin: 15px 0;
@@ -339,7 +327,6 @@ section p {
     color: var(--rosa);
 }
 
-
 .heart-line,
 .decorative-line {
     margin: 25px 0;
@@ -348,7 +335,6 @@ section p {
 
     font-size: 16px;
 }
-
 
 .welcome-message {
     max-width: 340px;
@@ -408,7 +394,6 @@ section p {
         color 0.35s ease,
         border-color 0.35s ease;
 }
-
 
 #openInvitation:hover,
 .invitation-button:hover {
@@ -507,7 +492,6 @@ section p {
     overflow: hidden;
 }
 
-
 .invitation-frame::before {
     content: "";
 
@@ -536,26 +520,23 @@ section p {
 ================================================== */
 
 .big-bow {
-    position: relative;
+    display: flex;
 
-    z-index: 3;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
 
     margin-bottom: 5px;
+}
 
-    font-size: 65px;
+.big-bow img {
+    display: block;
 
-    line-height: 1;
+    width: 120px;
+    height: auto;
 
-    filter:
-        drop-shadow(
-            0 6px 7px
-            rgba(100, 60, 60, 0.10)
-        );
-
-    animation:
-        bowFloat
-        4s ease-in-out
-        infinite;
+    object-fit: contain;
 }
 
 
@@ -568,7 +549,6 @@ section p {
 
     z-index: 3;
 }
-
 
 .hero h2 {
     position: relative;
@@ -587,7 +567,6 @@ section p {
         );
 }
 
-
 .tiny-heart {
     position: relative;
 
@@ -600,7 +579,6 @@ section p {
     font-size: 25px;
 }
 
-
 .hero .in-honor {
     position: relative;
 
@@ -610,7 +588,6 @@ section p {
         3px 0
         5px;
 }
-
 
 .hero h1 {
     position: relative;
@@ -637,7 +614,6 @@ section p {
     color: var(--rosa);
 }
 
-
 .hero .decorative-line {
     position: relative;
 
@@ -647,7 +623,6 @@ section p {
         14px 0
         16px;
 }
-
 
 .hero-message {
     position: relative;
@@ -725,7 +700,7 @@ section p {
 }
 
 
-/* IMAGEN */
+/* IMAGEN DE LA CONEJITA */
 
 .bunny-image {
     position: relative;
@@ -744,11 +719,6 @@ section p {
 
     object-position:
         center bottom;
-
-    /*
-       La imagen original tiene fondo blanco.
-       Esto ayuda a fundirlo con el papel crema.
-    */
 
     mix-blend-mode: multiply;
 
@@ -789,11 +759,9 @@ section p {
         infinite;
 }
 
-
 .bunny-decoration-left {
     left: 7%;
 }
-
 
 .bunny-decoration-right {
     right: 7%;
@@ -804,7 +772,9 @@ section p {
 }
 
 
-/* MARIPOSA JUNTO A LA CONEJITA */
+/* ==================================================
+   MARIPOSA JUNTO A LA CONEJITA
+================================================== */
 
 .bunny-butterfly {
     position: absolute;
@@ -814,14 +784,21 @@ section p {
     top: 45px;
     right: 10%;
 
-    font-size: 25px;
-
     pointer-events: none;
 
     animation:
         butterflyFloat
         5s ease-in-out
         infinite;
+}
+
+.bunny-butterfly img {
+    display: block;
+
+    width: 55px;
+    height: auto;
+
+    object-fit: contain;
 }
 
 
@@ -855,7 +832,6 @@ section p {
     opacity: 0.70;
 }
 
-
 .scroll-arrow {
     font-size: 18px;
 
@@ -882,7 +858,6 @@ section p {
     pointer-events: none;
 }
 
-
 .top-left {
     top: 20px;
     left: -10px;
@@ -891,7 +866,6 @@ section p {
         rotate(-20deg);
 }
 
-
 .bottom-right {
     right: -5px;
     bottom: 15px;
@@ -899,7 +873,6 @@ section p {
     transform:
         rotate(15deg);
 }
-
 
 .floating-butterfly {
     position: absolute;
@@ -916,12 +889,10 @@ section p {
         infinite;
 }
 
-
 .butterfly-1 {
     top: 20%;
     right: 7%;
 }
-
 
 .butterfly-2 {
     top: 45%;
@@ -930,12 +901,129 @@ section p {
     animation-delay: 1.2s;
 }
 
-
 .butterfly-3 {
     right: 12%;
     bottom: 15%;
 
     animation-delay: 2.2s;
+}
+
+.floating-butterfly {
+    position: absolute;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    animation:
+        butterflyFloat
+        5s ease-in-out
+        infinite;
+}
+
+.floating-butterfly img {
+    display: block;
+
+    width: 50px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.butterfly-1 {
+    top: 20%;
+    right: 7%;
+}
+
+/* ==================================================
+   FLORES DE LAS ESQUINAS
+================================================== */
+
+.corner-flower {
+    position: absolute;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+.corner-flower img {
+    display: block;
+
+    width: 90px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* FLOR SUPERIOR IZQUIERDA */
+
+.top-left {
+    top: 20px;
+    left: -10px;
+
+    transform:
+        rotate(-20deg);
+}
+
+
+/* FLOR INFERIOR DERECHA */
+
+.bottom-right {
+    right: -5px;
+    bottom: 15px;
+
+    transform:
+        rotate(15deg);
+}
+
+/* ==================================================
+   FLORES ALREDEDOR DE LA CONEJITA
+================================================== */
+
+.bunny-decoration {
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 10px;
+
+    pointer-events: none;
+
+    animation:
+        bunnyFlowerFloat
+        5s ease-in-out
+        infinite;
+}
+
+
+.bunny-decoration img {
+    display: block;
+
+    width: 70px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* FLOR IZQUIERDA */
+
+.bunny-decoration-left {
+    left: 7%;
+    bottom: 10px;
+}
+
+
+/* FLOR DERECHA */
+
+.bunny-decoration-right {
+    right: 7%;
+    bottom: 28px;
+
+    animation-delay: 1.2s;
 }
 
 
@@ -951,6 +1039,7 @@ section p {
 }
 
 
+
 .welcome-butterfly {
     font-size: 35px;
 
@@ -960,12 +1049,10 @@ section p {
         infinite;
 }
 
-
 .butterfly-welcome-1 {
     top: 15%;
     right: 10%;
 }
-
 
 .butterfly-welcome-2 {
     bottom: 15%;
@@ -974,23 +1061,42 @@ section p {
     animation-delay: 1.5s;
 }
 
-
 .welcome-flower {
     font-size: 80px;
 
     opacity: 0.70;
 }
 
-
 .welcome-flower-1 {
     top: 5%;
     left: -15px;
 }
 
-
 .welcome-flower-2 {
     right: -15px;
     bottom: 5%;
+}
+
+.welcome-flower {
+    position: absolute;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.welcome-flower img {
+    display: block;
+
+    width: 90px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.welcome-flower-1 {
+    top: 5%;
+    left: -15px;
 }
 
 
@@ -1015,7 +1121,6 @@ section:not(.hero) {
     text-align: center;
 }
 
-
 .section-content {
     position: relative;
 
@@ -1026,7 +1131,6 @@ section:not(.hero) {
     max-width: 470px;
 }
 
-
 .section-symbol {
     display: block;
 
@@ -1036,7 +1140,6 @@ section:not(.hero) {
 
     color: var(--rosa);
 }
-
 
 .small-line {
     width: 80px;
@@ -1059,11 +1162,9 @@ section:not(.hero) {
         #fffaf4;
 }
 
-
 .story-section p {
     margin-bottom: 20px;
 }
-
 
 .story-section h3 {
     margin-top: 30px;
@@ -1078,12 +1179,10 @@ section:not(.hero) {
         var(--rosa-oscuro);
 }
 
-
 .flower-left {
     left: -15px;
     bottom: 10%;
 }
-
 
 .flower-right {
     right: -15px;
@@ -1103,7 +1202,6 @@ section:not(.hero) {
             #fff6f1
         );
 }
-
 
 .date-frame {
     position: relative;
@@ -1130,7 +1228,6 @@ section:not(.hero) {
         rgba(255, 250, 245, 0.80);
 }
 
-
 .date-content {
     display: flex;
 
@@ -1142,13 +1239,11 @@ section:not(.hero) {
         35px 0;
 }
 
-
 .month {
     font-size: 15px;
 
     letter-spacing: 7px;
 }
-
 
 .day-number {
     font-size: 110px;
@@ -1159,7 +1254,6 @@ section:not(.hero) {
         var(--rosa-oscuro);
 }
 
-
 .day-name {
     margin-top: 10px;
 
@@ -1167,7 +1261,6 @@ section:not(.hero) {
 
     letter-spacing: 5px;
 }
-
 
 .date-divider {
     width: 60px;
@@ -1180,11 +1273,9 @@ section:not(.hero) {
         var(--dorado);
 }
 
-
 .year {
     font-size: 21px;
 }
-
 
 .event-time {
     margin-top: 10px;
@@ -1195,13 +1286,11 @@ section:not(.hero) {
         var(--rosa-oscuro);
 }
 
-
 .date-message {
     max-width: 300px;
 
     margin: auto;
 }
-
 
 .date-butterfly {
     top: 10%;
@@ -1218,11 +1307,9 @@ section:not(.hero) {
         #fffaf4;
 }
 
-
 .countdown-text {
     margin-bottom: 35px;
 }
-
 
 .countdown {
     display: grid;
@@ -1232,7 +1319,6 @@ section:not(.hero) {
 
     gap: 8px;
 }
-
 
 .time-card {
     padding:
@@ -1253,7 +1339,6 @@ section:not(.hero) {
         var(--rosa-suave);
 }
 
-
 .time-card span {
     display: block;
 
@@ -1262,7 +1347,6 @@ section:not(.hero) {
     color:
         var(--rosa-oscuro);
 }
-
 
 .time-card small {
     display: block;
@@ -1292,7 +1376,6 @@ section:not(.hero) {
         );
 }
 
-
 .location-card {
     margin-top: 35px;
 
@@ -1310,11 +1393,9 @@ section:not(.hero) {
         rgba(255, 255, 255, 0.50);
 }
 
-
 .location-name {
     font-style: italic;
 }
-
 
 .location-card h3 {
     margin:
@@ -1331,11 +1412,9 @@ section:not(.hero) {
         var(--rosa-oscuro);
 }
 
-
 .location-card .invitation-button {
     margin-top: 25px;
 }
-
 
 .location-butterfly {
     top: 10%;
@@ -1352,7 +1431,6 @@ section:not(.hero) {
         #fffaf4;
 }
 
-
 .gift-bow {
     margin-bottom: 20px;
 
@@ -1364,11 +1442,9 @@ section:not(.hero) {
         infinite;
 }
 
-
 .gift-section p {
     margin-bottom: 20px;
 }
-
 
 .gift-section .invitation-button {
     margin-top: 15px;
@@ -1387,7 +1463,6 @@ section:not(.hero) {
         );
 }
 
-
 .rsvp-form {
     margin-top: 35px;
 
@@ -1405,7 +1480,6 @@ section:not(.hero) {
         rgba(255, 255, 255, 0.60);
 }
 
-
 .rsvp-form label {
     display: block;
 
@@ -1419,7 +1493,6 @@ section:not(.hero) {
 
     letter-spacing: 1px;
 }
-
 
 .rsvp-form input,
 .rsvp-form select {
@@ -1444,18 +1517,15 @@ section:not(.hero) {
         var(--texto);
 }
 
-
 .rsvp-form input:focus,
 .rsvp-form select:focus {
     border-color:
         var(--rosa);
 }
 
-
 .rsvp-form button {
     width: 100%;
 }
-
 
 .rsvp-butterfly {
     top: -70px;
@@ -1488,6 +1558,8 @@ footer {
 }
 
 
+/* FLOR DECORATIVA DEL FOOTER */
+
 .footer-flower {
     position: absolute;
 
@@ -1500,21 +1572,36 @@ footer {
 }
 
 
+/* IMAGEN DE LA CONEJITA DEL FOOTER */
+
 .footer-bunny {
-    position: relative;
+    width: 100%;
 
-    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 20px auto 25px;
+}
+
+.footer-bunny img {
+    display: block;
+
+    width: 380px;
+    height: auto;
+
+    margin: 0 auto;
+
+    object-fit: contain;
 }
 
 
-.small-bunny {
-    font-size: 100px;
-}
-
+/* TÍTULO DEL FOOTER */
 
 footer h2 {
     margin:
-        15px auto;
+        15px
+        auto;
 
     font-family:
         "Great Vibes",
@@ -1532,15 +1619,20 @@ footer h2 {
 }
 
 
+/* TEXTO DEL FOOTER */
+
 footer > p {
     max-width: 400px;
 
     margin:
-        20px auto;
+        20px
+        auto;
 
     line-height: 1.8;
 }
 
+
+/* NOMBRE DEL FOOTER */
 
 footer h1 {
     margin-top: 25px;
@@ -1560,6 +1652,8 @@ footer h1 {
         var(--rosa);
 }
 
+
+/* FECHA DEL FOOTER */
 
 .footer-date {
     font-family:
@@ -1586,7 +1680,6 @@ footer h1 {
         opacity 1s ease,
         transform 1s ease;
 }
-
 
 .reveal.active {
     opacity: 1;
@@ -1620,7 +1713,7 @@ footer h1 {
 }
 
 
-/* CONEJITA REAL */
+/* CONEJITA */
 
 @keyframes bunnyImageFloat {
 
@@ -1639,7 +1732,7 @@ footer h1 {
 }
 
 
-/* RESPLANDOR CONEJITA */
+/* RESPLANDOR */
 
 @keyframes bunnyGlow {
 
@@ -1662,7 +1755,7 @@ footer h1 {
 }
 
 
-/* FLORES CONEJITA */
+/* FLORES */
 
 @keyframes bunnyFlowerFloat {
 
@@ -1769,7 +1862,6 @@ footer h1 {
         forwards;
 }
 
-
 @keyframes petalFall {
 
     0% {
@@ -1804,7 +1896,6 @@ footer h1 {
         padding: 15px;
     }
 
-
     .welcome-card {
         padding:
             55px
@@ -1819,7 +1910,6 @@ footer h1 {
         padding: 8px;
     }
 
-
     .invitation-frame {
         min-height:
             calc(100svh - 16px);
@@ -1831,19 +1921,25 @@ footer h1 {
     }
 
 
+    /* LAZO */
+
     .big-bow {
         margin-bottom: 2px;
-
-        font-size: 52px;
     }
 
+    .big-bow img {
+        width: 100px;
+        height: auto;
+    }
+
+
+    /* TEXTOS PORTADA */
 
     .hero h2 {
         margin-top: 7px;
 
         font-size: 65px;
     }
-
 
     .hero h1 {
         margin:
@@ -1853,13 +1949,11 @@ footer h1 {
         font-size: 80px;
     }
 
-
     .hero .decorative-line {
         margin:
             10px 0
             13px;
     }
-
 
     .hero-message {
         max-width: 290px;
@@ -1870,7 +1964,7 @@ footer h1 {
     }
 
 
-    /* CONEJITA */
+    /* CONEJITA PRINCIPAL */
 
     .bunny-area {
         height: 260px;
@@ -1878,42 +1972,44 @@ footer h1 {
         margin-top: 3px;
     }
 
-
     .bunny-image {
         width: 245px;
 
         max-width: 90%;
     }
 
-
     .bunny-glow {
         width: 210px;
         height: 195px;
     }
 
-
     .bunny-decoration {
         font-size: 36px;
     }
 
-
     .bunny-decoration-left {
         left: 4%;
     }
-
 
     .bunny-decoration-right {
         right: 4%;
     }
 
 
+    /* MARIPOSA DE LA CONEJITA */
+
     .bunny-butterfly {
         top: 32px;
         right: 6%;
-
-        font-size: 21px;
     }
 
+    .bunny-butterfly img {
+        width: 48px;
+        height: auto;
+    }
+
+
+    /* MENSAJE PARA DESLIZAR */
 
     .scroll-message {
         margin-top: 8px;
@@ -1933,10 +2029,11 @@ footer h1 {
     }
 
 
+    /* CUENTA REGRESIVA */
+
     .countdown {
         gap: 5px;
     }
-
 
     .time-card {
         padding:
@@ -1944,15 +2041,35 @@ footer h1 {
             3px;
     }
 
-
     .time-card span {
         font-size: 24px;
     }
 
+
+    /* CONFIRMACIÓN */
 
     .rsvp-form {
         padding:
             25px
             20px;
     }
+
+
+    /* FOOTER */
+
+    footer {
+        padding:
+            75px
+            25px
+            50px;
+    }
+
+    .footer-bunny {
+        margin:
+            15px
+            auto
+            20px;
+    }
+
+  
 }
