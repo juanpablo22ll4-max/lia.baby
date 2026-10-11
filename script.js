@@ -13,7 +13,7 @@ const whatsappNumber = "18156931464";
 
 // Ubicación del evento.
 const mapsURL =
-    "https://maps.app.goo.gl/iKCUK1qDc7FBzmxL9";
+    "https://maps.app.goo.gl/auW3b11qTrTf5n6H8";
 
 
 /* ==================================================
@@ -35,6 +35,27 @@ const locationButton =
 const confirmButton =
     document.getElementById("confirmButton");
 
+// Música de fondo.
+const backgroundMusic =
+    document.getElementById("backgroundMusic");
+
+
+/* ==================================================
+   CONFIGURACIÓN DE LA MÚSICA
+================================================== */
+
+if (backgroundMusic) {
+
+    // Volumen suave.
+    // 0 = silencio
+    // 1 = volumen máximo
+    backgroundMusic.volume = 0.28;
+
+    // Repetir continuamente.
+    backgroundMusic.loop = true;
+
+}
+
 
 /* ==================================================
    ABRIR INVITACIÓN
@@ -48,6 +69,33 @@ if (openButton && welcomeScreen && invitation) {
 
             // Evita pulsaciones repetidas.
             openButton.disabled = true;
+
+
+            /* ==========================================
+               INICIAR MÚSICA
+            ========================================== */
+
+            if (backgroundMusic) {
+
+                backgroundMusic
+                    .play()
+                    .catch(
+                        function (error) {
+
+                            console.log(
+                                "El navegador no permitió iniciar la música:",
+                                error
+                            );
+
+                        }
+                    );
+
+            }
+
+
+            /* ==========================================
+               ANIMACIÓN DE ENTRADA
+            ========================================== */
 
             welcomeScreen.style.transition =
                 "opacity 0.9s ease, transform 0.9s ease";
@@ -65,13 +113,22 @@ if (openButton && welcomeScreen && invitation) {
 
                     invitation.classList.remove("hidden");
 
+
+                    /* VOLVER ARRIBA */
+
                     window.scrollTo({
                         top: 0,
                         left: 0,
                         behavior: "instant"
                     });
 
+
+                    /* ACTIVAR ANIMACIONES */
+
                     startScrollAnimations();
+
+
+                    /* ACTIVAR PÉTALOS */
 
                     startPetals();
 
@@ -101,16 +158,16 @@ function startScrollAnimations() {
 
 
     /*
-       Compatibilidad:
-       Si el navegador no soporta IntersectionObserver,
-       mostramos las secciones directamente.
+       Compatibilidad con navegadores antiguos.
     */
 
     if (!("IntersectionObserver" in window)) {
 
         elements.forEach(
             function (element) {
+
                 element.classList.add("active");
+
             }
         );
 
@@ -179,6 +236,7 @@ function startPetals() {
         return;
     }
 
+
     petalsStarted = true;
 
 
@@ -191,11 +249,15 @@ function startPetals() {
 }
 
 
+/* ==================================================
+   CREAR PÉTALO
+================================================== */
+
 function createPetal() {
 
     /*
-       No generamos pétalos cuando la pestaña
-       está en segundo plano.
+       Si la pestaña está en segundo plano,
+       no generamos pétalos.
     */
 
     if (document.hidden) {
@@ -232,9 +294,13 @@ function createPetal() {
         randomPetal;
 
 
+    /* POSICIÓN HORIZONTAL */
+
     petal.style.left =
         Math.random() * 95 + "vw";
 
+
+    /* TAMAÑO */
 
     petal.style.fontSize =
         (
@@ -244,6 +310,8 @@ function createPetal() {
         +
         "px";
 
+
+    /* VELOCIDAD */
 
     petal.style.animationDuration =
         (
@@ -256,6 +324,8 @@ function createPetal() {
 
     document.body.appendChild(petal);
 
+
+    /* ELIMINAR DESPUÉS DE CAER */
 
     setTimeout(
         function () {
@@ -280,8 +350,8 @@ document.addEventListener(
     function (event) {
 
         /*
-           En dispositivos táctiles no necesitamos
-           calcular el movimiento del mouse.
+           En teléfonos y dispositivos táctiles
+           no necesitamos este efecto.
         */
 
         if (
@@ -399,6 +469,7 @@ if (confirmButton) {
                     "guestName"
                 );
 
+
             const guestCountSelect =
                 document.getElementById(
                     "guestCount"
@@ -423,7 +494,9 @@ if (confirmButton) {
                 guestCountSelect.value;
 
 
-            /* VALIDAR NOMBRE */
+            /* ==========================================
+               VALIDAR NOMBRE
+            ========================================== */
 
             if (!guestName) {
 
@@ -437,7 +510,9 @@ if (confirmButton) {
             }
 
 
-            /* VALIDAR WHATSAPP */
+            /* ==========================================
+               VALIDAR WHATSAPP
+            ========================================== */
 
             if (!whatsappNumber) {
 
@@ -449,7 +524,9 @@ if (confirmButton) {
             }
 
 
-            /* MENSAJE */
+            /* ==========================================
+               MENSAJE DE WHATSAPP
+            ========================================== */
 
             const message =
 `Hola ♡
