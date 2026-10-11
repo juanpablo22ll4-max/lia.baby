@@ -178,7 +178,6 @@ section p {
 
 .welcome-screen {
     position: fixed;
-
     inset: 0;
 
     z-index: 9999;
@@ -346,6 +345,62 @@ section p {
     font-size: 15px;
 
     line-height: 1.8;
+}
+
+
+/* ==================================================
+   DECORACIÓN DE LA PANTALLA DE ENTRADA
+================================================== */
+
+.welcome-butterfly,
+.welcome-flower {
+    position: absolute;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.welcome-butterfly {
+    animation:
+        butterflyFloat
+        5s ease-in-out
+        infinite;
+}
+
+.butterfly-welcome-1 {
+    top: 15%;
+    right: 10%;
+}
+
+.butterfly-welcome-2 {
+    bottom: 15%;
+    left: 8%;
+
+    animation-delay: 1.5s;
+}
+
+.welcome-flower {
+    opacity: 0.70;
+}
+
+.welcome-flower img {
+    display: block;
+
+    width: 90px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.welcome-flower-1 {
+    top: 5%;
+    left: -15px;
+}
+
+.welcome-flower-2 {
+    right: -15px;
+    bottom: 5%;
 }
 
 
@@ -544,12 +599,6 @@ section p {
    TEXTOS DE LA PORTADA
 ================================================== */
 
-.hero .mini-title {
-    position: relative;
-
-    z-index: 3;
-}
-
 .hero h2 {
     position: relative;
 
@@ -640,7 +689,7 @@ section p {
 
 
 /* ==================================================
-   CONEJITA REAL DE LA PORTADA
+   CONEJITA DE LA PORTADA
 ================================================== */
 
 .bunny-area {
@@ -649,7 +698,6 @@ section p {
     z-index: 3;
 
     width: 100%;
-
     height: 300px;
 
     margin:
@@ -700,7 +748,7 @@ section p {
 }
 
 
-/* IMAGEN DE LA CONEJITA */
+/* IMAGEN */
 
 .bunny-image {
     position: relative;
@@ -710,7 +758,6 @@ section p {
     display: block;
 
     width: 275px;
-
     max-width: 88%;
 
     height: 100%;
@@ -738,7 +785,9 @@ section p {
 }
 
 
-/* FLORES ALREDEDOR */
+/* ==================================================
+   FLORES DECORATIVAS
+================================================== */
 
 .bunny-decoration {
     position: absolute;
@@ -746,10 +795,6 @@ section p {
     z-index: 2;
 
     bottom: 10px;
-
-    font-size: 45px;
-
-    opacity: 0.72;
 
     pointer-events: none;
 
@@ -759,13 +804,22 @@ section p {
         infinite;
 }
 
+.bunny-decoration img {
+    display: block;
+
+    width: 70px;
+    height: auto;
+
+    object-fit: contain;
+}
+
 .bunny-decoration-left {
     left: 7%;
+    bottom: 10px;
 }
 
 .bunny-decoration-right {
     right: 7%;
-
     bottom: 28px;
 
     animation-delay: 1.2s;
@@ -799,6 +853,45 @@ section p {
     height: auto;
 
     object-fit: contain;
+}
+
+
+/* ==================================================
+   MARIPOSAS FLOTANTES
+================================================== */
+
+.floating-butterfly {
+    position: absolute;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    animation:
+        butterflyFloat
+        5s ease-in-out
+        infinite;
+}
+
+.floating-butterfly img {
+    display: block;
+
+    width: 50px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.butterfly-1 {
+    top: 20%;
+    right: 7%;
+}
+
+.butterfly-2 {
+    top: 45%;
+    left: 5%;
+
+    animation-delay: 1.2s;
 }
 
 
@@ -842,265 +935,6 @@ section p {
 
 
 /* ==================================================
-   FLORES Y MARIPOSAS
-================================================== */
-
-.corner-flower,
-.watercolor-flower {
-    position: absolute;
-
-    z-index: 2;
-
-    font-size: 70px;
-
-    opacity: 0.75;
-
-    pointer-events: none;
-}
-
-.top-left {
-    top: 20px;
-    left: -10px;
-
-    transform:
-        rotate(-20deg);
-}
-
-.bottom-right {
-    right: -5px;
-    bottom: 15px;
-
-    transform:
-        rotate(15deg);
-}
-
-.floating-butterfly {
-    position: absolute;
-
-    z-index: 5;
-
-    font-size: 30px;
-
-    pointer-events: none;
-
-    animation:
-        butterflyFloat
-        5s ease-in-out
-        infinite;
-}
-
-.butterfly-1 {
-    top: 20%;
-    right: 7%;
-}
-
-.butterfly-2 {
-    top: 45%;
-    left: 5%;
-
-    animation-delay: 1.2s;
-}
-
-.butterfly-3 {
-    right: 12%;
-    bottom: 15%;
-
-    animation-delay: 2.2s;
-}
-
-.floating-butterfly {
-    position: absolute;
-
-    z-index: 5;
-
-    pointer-events: none;
-
-    animation:
-        butterflyFloat
-        5s ease-in-out
-        infinite;
-}
-
-.floating-butterfly img {
-    display: block;
-
-    width: 50px;
-    height: auto;
-
-    object-fit: contain;
-}
-
-.butterfly-1 {
-    top: 20%;
-    right: 7%;
-}
-
-/* ==================================================
-   FLORES DE LAS ESQUINAS
-================================================== */
-
-.corner-flower {
-    position: absolute;
-
-    z-index: 2;
-
-    pointer-events: none;
-}
-
-
-.corner-flower img {
-    display: block;
-
-    width: 90px;
-    height: auto;
-
-    object-fit: contain;
-}
-
-
-/* FLOR SUPERIOR IZQUIERDA */
-
-.top-left {
-    top: 20px;
-    left: -10px;
-
-    transform:
-        rotate(-20deg);
-}
-
-
-/* FLOR INFERIOR DERECHA */
-
-.bottom-right {
-    right: -5px;
-    bottom: 15px;
-
-    transform:
-        rotate(15deg);
-}
-
-/* ==================================================
-   FLORES ALREDEDOR DE LA CONEJITA
-================================================== */
-
-.bunny-decoration {
-    position: absolute;
-
-    z-index: 2;
-
-    bottom: 10px;
-
-    pointer-events: none;
-
-    animation:
-        bunnyFlowerFloat
-        5s ease-in-out
-        infinite;
-}
-
-
-.bunny-decoration img {
-    display: block;
-
-    width: 70px;
-    height: auto;
-
-    object-fit: contain;
-}
-
-
-/* FLOR IZQUIERDA */
-
-.bunny-decoration-left {
-    left: 7%;
-    bottom: 10px;
-}
-
-
-/* FLOR DERECHA */
-
-.bunny-decoration-right {
-    right: 7%;
-    bottom: 28px;
-
-    animation-delay: 1.2s;
-}
-
-
-/* ==================================================
-   DECORACIÓN DE LA PANTALLA DE ENTRADA
-================================================== */
-
-.welcome-butterfly,
-.welcome-flower {
-    position: absolute;
-
-    z-index: 2;
-}
-
-
-
-.welcome-butterfly {
-    font-size: 35px;
-
-    animation:
-        butterflyFloat
-        5s ease-in-out
-        infinite;
-}
-
-.butterfly-welcome-1 {
-    top: 15%;
-    right: 10%;
-}
-
-.butterfly-welcome-2 {
-    bottom: 15%;
-    left: 8%;
-
-    animation-delay: 1.5s;
-}
-
-.welcome-flower {
-    font-size: 80px;
-
-    opacity: 0.70;
-}
-
-.welcome-flower-1 {
-    top: 5%;
-    left: -15px;
-}
-
-.welcome-flower-2 {
-    right: -15px;
-    bottom: 5%;
-}
-
-.welcome-flower {
-    position: absolute;
-
-    z-index: 2;
-
-    pointer-events: none;
-}
-
-.welcome-flower img {
-    display: block;
-
-    width: 90px;
-    height: auto;
-
-    object-fit: contain;
-}
-
-.welcome-flower-1 {
-    top: 5%;
-    left: -15px;
-}
-
-
-/* ==================================================
    SECCIONES GENERALES
 ================================================== */
 
@@ -1127,7 +961,6 @@ section:not(.hero) {
     z-index: 5;
 
     width: 100%;
-
     max-width: 470px;
 }
 
@@ -1158,8 +991,7 @@ section:not(.hero) {
 ================================================== */
 
 .story-section {
-    background:
-        #fffaf4;
+    background: #fffaf4;
 }
 
 .story-section p {
@@ -1179,9 +1011,12 @@ section:not(.hero) {
         var(--rosa-oscuro);
 }
 
-.flower-left {
-    left: -15px;
-    bottom: 10%;
+.watercolor-flower {
+    position: absolute;
+
+    z-index: 2;
+
+    pointer-events: none;
 }
 
 .flower-right {
@@ -1207,7 +1042,6 @@ section:not(.hero) {
     position: relative;
 
     width: 100%;
-
     max-width: 430px;
 
     padding:
@@ -1292,76 +1126,6 @@ section:not(.hero) {
     margin: auto;
 }
 
-.date-butterfly {
-    top: 10%;
-    right: 10%;
-}
-
-
-/* ==================================================
-   CUENTA REGRESIVA
-================================================== */
-
-.countdown-section {
-    background:
-        #fffaf4;
-}
-
-.countdown-text {
-    margin-bottom: 35px;
-}
-
-.countdown {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 8px;
-}
-
-.time-card {
-    padding:
-        18px
-        5px;
-
-    border:
-        1px solid
-        var(--dorado-claro);
-
-    border-radius:
-        70px
-        70px
-        15px
-        15px;
-
-    background:
-        var(--rosa-suave);
-}
-
-.time-card span {
-    display: block;
-
-    font-size: 28px;
-
-    color:
-        var(--rosa-oscuro);
-}
-
-.time-card small {
-    display: block;
-
-    margin-top: 5px;
-
-    font-family:
-        "Poppins",
-        sans-serif;
-
-    font-size: 7px;
-
-    letter-spacing: 1px;
-}
-
 
 /* ==================================================
    UBICACIÓN
@@ -1416,19 +1180,13 @@ section:not(.hero) {
     margin-top: 25px;
 }
 
-.location-butterfly {
-    top: 10%;
-    left: 10%;
-}
-
 
 /* ==================================================
    REGALOS
 ================================================== */
 
 .gift-section {
-    background:
-        #fffaf4;
+    background: #fffaf4;
 }
 
 .gift-bow {
@@ -1527,11 +1285,6 @@ section:not(.hero) {
     width: 100%;
 }
 
-.rsvp-butterfly {
-    top: -70px;
-    right: 0;
-}
-
 
 /* ==================================================
    FOOTER
@@ -1557,46 +1310,31 @@ footer {
     overflow: hidden;
 }
 
-
-/* FLOR DECORATIVA DEL FOOTER */
-
-.footer-flower {
-    position: absolute;
-
-    left: -10px;
-    bottom: 0;
-
-    font-size: 90px;
-
-    opacity: 0.70;
-}
-
-
-/* IMAGEN DE LA CONEJITA DEL FOOTER */
-
 .footer-bunny {
     width: 100%;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
-    margin: 20px auto 25px;
+    margin:
+        20px auto
+        25px;
 }
 
 .footer-bunny img {
     display: block;
 
     width: 380px;
+    max-width: 100%;
+
     height: auto;
 
     margin: 0 auto;
 
     object-fit: contain;
 }
-
-
-/* TÍTULO DEL FOOTER */
 
 footer h2 {
     margin:
@@ -1618,9 +1356,6 @@ footer h2 {
         var(--rosa-oscuro);
 }
 
-
-/* TEXTO DEL FOOTER */
-
 footer > p {
     max-width: 400px;
 
@@ -1630,9 +1365,6 @@ footer > p {
 
     line-height: 1.8;
 }
-
-
-/* NOMBRE DEL FOOTER */
 
 footer h1 {
     margin-top: 25px;
@@ -1651,9 +1383,6 @@ footer h1 {
     color:
         var(--rosa);
 }
-
-
-/* FECHA DEL FOOTER */
 
 .footer-date {
     font-family:
@@ -1713,8 +1442,6 @@ footer h1 {
 }
 
 
-/* CONEJITA */
-
 @keyframes bunnyImageFloat {
 
     0%,
@@ -1731,8 +1458,6 @@ footer h1 {
     }
 }
 
-
-/* RESPLANDOR */
 
 @keyframes bunnyGlow {
 
@@ -1755,8 +1480,6 @@ footer h1 {
 }
 
 
-/* FLORES */
-
 @keyframes bunnyFlowerFloat {
 
     0%,
@@ -1774,8 +1497,6 @@ footer h1 {
 }
 
 
-/* LAZOS */
-
 @keyframes bowFloat {
 
     0%,
@@ -1792,8 +1513,6 @@ footer h1 {
     }
 }
 
-
-/* MARIPOSAS */
 
 @keyframes butterflyFloat {
 
@@ -1823,8 +1542,6 @@ footer h1 {
     }
 }
 
-
-/* FLECHA */
 
 @keyframes arrowDown {
 
@@ -1929,7 +1646,6 @@ footer h1 {
 
     .big-bow img {
         width: 100px;
-        height: auto;
     }
 
 
@@ -1964,7 +1680,7 @@ footer h1 {
     }
 
 
-    /* CONEJITA PRINCIPAL */
+    /* CONEJITA */
 
     .bunny-area {
         height: 260px;
@@ -1983,10 +1699,6 @@ footer h1 {
         height: 195px;
     }
 
-    .bunny-decoration {
-        font-size: 36px;
-    }
-
     .bunny-decoration-left {
         left: 4%;
     }
@@ -1995,8 +1707,12 @@ footer h1 {
         right: 4%;
     }
 
+    .bunny-decoration img {
+        width: 62px;
+    }
 
-    /* MARIPOSA DE LA CONEJITA */
+
+    /* MARIPOSA */
 
     .bunny-butterfly {
         top: 32px;
@@ -2005,11 +1721,14 @@ footer h1 {
 
     .bunny-butterfly img {
         width: 48px;
-        height: auto;
+    }
+
+    .floating-butterfly img {
+        width: 44px;
     }
 
 
-    /* MENSAJE PARA DESLIZAR */
+    /* DESLIZAR */
 
     .scroll-message {
         margin-top: 8px;
@@ -2026,23 +1745,6 @@ footer h1 {
         padding:
             80px
             25px;
-    }
-
-
-    /* CUENTA REGRESIVA */
-
-    .countdown {
-        gap: 5px;
-    }
-
-    .time-card {
-        padding:
-            15px
-            3px;
-    }
-
-    .time-card span {
-        font-size: 24px;
     }
 
 
@@ -2071,5 +1773,9 @@ footer h1 {
             20px;
     }
 
-  
+    .footer-bunny img {
+        width: 340px;
+
+        max-width: 100%;
+    }
 }

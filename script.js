@@ -3,25 +3,22 @@
 ================================================== */
 
 
-// ==================================================
-// CONFIGURACIÓN
-// ==================================================
+/* ==================================================
+   CONFIGURACIÓN
+================================================== */
 
-const eventDate = new Date(
-    "2027-01-09T16:00:00-06:00"
-);
-
-
-// WHATSAPP
-// Ejemplo: 16301234567
-
+// Número de WhatsApp para confirmar asistencia.
+// Formato internacional, sin espacios ni símbolos.
 const whatsappNumber = "18156931464";
 
+// Ubicación del evento.
+const mapsURL =
+    "https://maps.app.goo.gl/auW3b11qTrTf5n6H8";
 
 
-// ==================================================
-// ABRIR INVITACIÓN
-// ==================================================
+/* ==================================================
+   ELEMENTOS PRINCIPALES
+================================================== */
 
 const welcomeScreen =
     document.getElementById("welcomeScreen");
@@ -32,18 +29,30 @@ const invitation =
 const openButton =
     document.getElementById("openInvitation");
 
+const locationButton =
+    document.getElementById("locationButton");
 
-if (openButton) {
+const confirmButton =
+    document.getElementById("confirmButton");
+
+
+/* ==================================================
+   ABRIR INVITACIÓN
+================================================== */
+
+if (openButton && welcomeScreen && invitation) {
 
     openButton.addEventListener(
         "click",
         function () {
 
+            // Evita pulsaciones repetidas.
+            openButton.disabled = true;
+
             welcomeScreen.style.transition =
                 "opacity 0.9s ease, transform 0.9s ease";
 
-            welcomeScreen.style.opacity =
-                "0";
+            welcomeScreen.style.opacity = "0";
 
             welcomeScreen.style.transform =
                 "scale(1.05)";
@@ -52,17 +61,15 @@ if (openButton) {
             setTimeout(
                 function () {
 
-                    welcomeScreen.style.display =
-                        "none";
+                    welcomeScreen.style.display = "none";
 
-                    invitation.classList.remove(
-                        "hidden"
-                    );
+                    invitation.classList.remove("hidden");
 
-                    window.scrollTo(
-                        0,
-                        0
-                    );
+                    window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: "instant"
+                    });
 
                     startScrollAnimations();
 
@@ -78,146 +85,37 @@ if (openButton) {
 }
 
 
-
-// ==================================================
-// CUENTA REGRESIVA
-// ==================================================
-
-function updateCountdown() {
-
-    const now =
-        new Date().getTime();
-
-    const distance =
-        eventDate.getTime() - now;
-
-
-    if (distance <= 0) {
-
-        const countdown =
-            document.getElementById("countdown");
-
-        if (countdown) {
-
-            countdown.innerHTML = `
-
-                <div class="event-today">
-
-                    <h3>
-                        ¡Llegó el gran día! ♡
-                    </h3>
-
-                    <p>
-                        Hoy celebramos la dulce
-                        espera de Lía Isabel.
-                    </p>
-
-                </div>
-
-            `;
-
-        }
-
-        return;
-    }
-
-
-    const days =
-        Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
-        );
-
-
-    const hours =
-        Math.floor(
-            (
-                distance %
-                (1000 * 60 * 60 * 24)
-            )
-            /
-            (1000 * 60 * 60)
-        );
-
-
-    const minutes =
-        Math.floor(
-            (
-                distance %
-                (1000 * 60 * 60)
-            )
-            /
-            (1000 * 60)
-        );
-
-
-    const seconds =
-        Math.floor(
-            (
-                distance %
-                (1000 * 60)
-            )
-            /
-            1000
-        );
-
-
-    const daysElement =
-        document.getElementById("days");
-
-    const hoursElement =
-        document.getElementById("hours");
-
-    const minutesElement =
-        document.getElementById("minutes");
-
-    const secondsElement =
-        document.getElementById("seconds");
-
-
-    if (daysElement) {
-        daysElement.textContent =
-            String(days).padStart(2, "0");
-    }
-
-
-    if (hoursElement) {
-        hoursElement.textContent =
-            String(hours).padStart(2, "0");
-    }
-
-
-    if (minutesElement) {
-        minutesElement.textContent =
-            String(minutes).padStart(2, "0");
-    }
-
-
-    if (secondsElement) {
-        secondsElement.textContent =
-            String(seconds).padStart(2, "0");
-    }
-
-}
-
-
-updateCountdown();
-
-setInterval(
-    updateCountdown,
-    1000
-);
-
-
-
-// ==================================================
-// ANIMACIONES AL BAJAR
-// ==================================================
+/* ==================================================
+   ANIMACIONES AL HACER SCROLL
+================================================== */
 
 function startScrollAnimations() {
 
     const elements =
         document.querySelectorAll(".reveal");
+
+
+    if (!elements.length) {
+        return;
+    }
+
+
+    /*
+       Compatibilidad:
+       Si el navegador no soporta IntersectionObserver,
+       mostramos las secciones directamente.
+    */
+
+    if (!("IntersectionObserver" in window)) {
+
+        elements.forEach(
+            function (element) {
+                element.classList.add("active");
+            }
+        );
+
+        return;
+    }
 
 
     const observer =
@@ -258,9 +156,7 @@ function startScrollAnimations() {
 
         function (element) {
 
-            observer.observe(
-                element
-            );
+            observer.observe(element);
 
         }
 
@@ -269,12 +165,12 @@ function startScrollAnimations() {
 }
 
 
-
-// ==================================================
-// PÉTALOS
-// ==================================================
+/* ==================================================
+   PÉTALOS
+================================================== */
 
 let petalsStarted = false;
+let petalsInterval = null;
 
 
 function startPetals() {
@@ -283,34 +179,35 @@ function startPetals() {
         return;
     }
 
-
     petalsStarted = true;
 
 
-    setInterval(
-
-        function () {
-
-            createPetal();
-
-        },
-
-        1800
-
-    );
+    petalsInterval =
+        setInterval(
+            createPetal,
+            1800
+        );
 
 }
 
 
 function createPetal() {
 
+    /*
+       No generamos pétalos cuando la pestaña
+       está en segundo plano.
+    */
+
+    if (document.hidden) {
+        return;
+    }
+
+
     const petal =
         document.createElement("div");
 
 
-    petal.classList.add(
-        "petal"
-    );
+    petal.classList.add("petal");
 
 
     const petals = [
@@ -336,16 +233,13 @@ function createPetal() {
 
 
     petal.style.left =
-        Math.random() *
-        95 +
-        "vw";
+        Math.random() * 95 + "vw";
 
 
     petal.style.fontSize =
         (
             10 +
-            Math.random() *
-            12
+            Math.random() * 12
         )
         +
         "px";
@@ -354,37 +248,30 @@ function createPetal() {
     petal.style.animationDuration =
         (
             8 +
-            Math.random() *
-            6
+            Math.random() * 6
         )
         +
         "s";
 
 
-    document.body.appendChild(
-        petal
-    );
+    document.body.appendChild(petal);
 
 
     setTimeout(
-
         function () {
 
             petal.remove();
 
         },
-
         15000
-
     );
 
 }
 
 
-
-// ==================================================
-// MOVIMIENTO SUAVE DE MARIPOSAS CON EL MOUSE
-// ==================================================
+/* ==================================================
+   MOVIMIENTO SUAVE DE MARIPOSAS
+================================================== */
 
 document.addEventListener(
 
@@ -392,10 +279,29 @@ document.addEventListener(
 
     function (event) {
 
+        /*
+           En dispositivos táctiles no necesitamos
+           calcular el movimiento del mouse.
+        */
+
+        if (
+            window.matchMedia(
+                "(hover: none)"
+            ).matches
+        ) {
+            return;
+        }
+
+
         const butterflies =
             document.querySelectorAll(
                 ".floating-butterfly"
             );
+
+
+        if (!butterflies.length) {
+            return;
+        }
 
 
         const x =
@@ -422,10 +328,7 @@ document.addEventListener(
 
         butterflies.forEach(
 
-            function (
-                butterfly,
-                index
-            ) {
+            function (butterfly, index) {
 
                 const multiplier =
                     index + 1;
@@ -457,26 +360,15 @@ document.addEventListener(
 );
 
 
-
-// ==================================================
-// GOOGLE MAPS
-// ==================================================
-
-const locationButton =
-    document.getElementById(
-        "locationButton"
-    );
-
+/* ==================================================
+   GOOGLE MAPS
+================================================== */
 
 if (locationButton) {
 
     locationButton.addEventListener(
         "click",
         function () {
-
-            const mapsURL =
-                "https://maps.app.goo.gl/auW3b11qTrTf5n6H8";
-
 
             window.open(
                 mapsURL,
@@ -490,16 +382,9 @@ if (locationButton) {
 }
 
 
-
-// ==================================================
-// CONFIRMAR ASISTENCIA
-// ==================================================
-
-const confirmButton =
-    document.getElementById(
-        "confirmButton"
-    );
-
+/* ==================================================
+   CONFIRMAR ASISTENCIA
+================================================== */
 
 if (confirmButton) {
 
@@ -509,22 +394,36 @@ if (confirmButton) {
 
         function () {
 
+            const guestNameInput =
+                document.getElementById(
+                    "guestName"
+                );
+
+            const guestCountSelect =
+                document.getElementById(
+                    "guestCount"
+                );
+
+
+            if (
+                !guestNameInput ||
+                !guestCountSelect
+            ) {
+                return;
+            }
+
+
             const guestName =
-                document
-                    .getElementById(
-                        "guestName"
-                    )
+                guestNameInput
                     .value
                     .trim();
 
 
             const guestCount =
-                document
-                    .getElementById(
-                        "guestCount"
-                    )
-                    .value;
+                guestCountSelect.value;
 
+
+            /* VALIDAR NOMBRE */
 
             if (!guestName) {
 
@@ -532,10 +431,13 @@ if (confirmButton) {
                     "Por favor escribe tu nombre ♡"
                 );
 
-                return;
+                guestNameInput.focus();
 
+                return;
             }
 
+
+            /* VALIDAR WHATSAPP */
 
             if (!whatsappNumber) {
 
@@ -544,11 +446,13 @@ if (confirmButton) {
                 );
 
                 return;
-
             }
 
 
-            const message = `Hola ♡
+            /* MENSAJE */
+
+            const message =
+`Hola ♡
 
 Quiero confirmar mi asistencia al Baby Shower de Lía Isabel.
 
@@ -581,3 +485,8 @@ Personas que asistirán: ${guestCount}
     );
 
 }
+
+
+/* ==================================================
+   FIN
+================================================== */
