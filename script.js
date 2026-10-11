@@ -13,7 +13,7 @@ const whatsappNumber = "18156931464";
 
 // Ubicación del evento.
 const mapsURL =
-    "https://maps.app.goo.gl/auW3b11qTrTf5n6H8";
+    "https://maps.app.goo.gl/iKCUK1qDc7FBzmxL9";
 
 
 /* ==================================================
@@ -454,7 +454,7 @@ if (confirmButton) {
             const message =
 `Hola ♡
 
-Quiero confirmar mi asistencia al Baby Shower de Lía Isabel.
+Quiero confirmar mi asistencia al Baby Shower de Lia Isabel.
 
 Nombre: ${guestName}
 Personas que asistirán: ${guestCount}
