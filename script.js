@@ -13,7 +13,7 @@ const whatsappNumber = "18156931464";
 
 // Ubicación del evento.
 const mapsURL =
-    "https://maps.app.goo.gl/auW3b11qTrTf5n6H8";
+    "https://maps.app.goo.gl/HisbsrG1b9voXiDH7";
 
 
 /* ==================================================
